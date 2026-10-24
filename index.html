@@ -26,7 +26,7 @@
   window.CANDIDATES = [
     { no: 1, nama: "Calon Nomor 1", moto: "", visi: "", misi: [], foto: null },
     { no: 2, nama: "Calon Nomor 2", moto: "", visi: "", misi: [], foto: null },
-    { no: 3, nama: "Juheri", moto: "", visi: "", misi: [], foto: "juheri.png" }
+    { no: 3, nama: "Juheri", moto: "Amanah, Melayani, Membangun Pasanggrahan", visi: "", misi: [], foto: "juheri.png" }
   ];
   window.DESA_NAME = "Pasanggrahan";
   window.KEC_NAME = "Kecamatan Kasomalang, Kabupaten Subang";
@@ -263,9 +263,14 @@
   /* Sentuhan halus: calon dengan foto asli (nomor 3) sedikit lebih menonjol. */
   .candidate-card.featured{
     border-color:var(--gold);
-    box-shadow:0 0 0 1.5px rgba(176,138,46,0.35), 0 6px 18px rgba(176,138,46,0.18);
+    background:linear-gradient(180deg,#fffdf7 0%,var(--paper) 60%);
+    box-shadow:0 0 0 1.5px rgba(176,138,46,0.35), 0 10px 24px rgba(176,138,46,0.22);
+    transform:translateY(-3px);
   }
-  .candidate-card.featured .foto-frame{border-color:var(--gold);}
+  .candidate-card.featured:hover{transform:translateY(-5px);}
+  .candidate-card.featured .foto-frame{border-color:var(--gold);box-shadow:0 4px 14px rgba(176,138,46,0.25);}
+  .candidate-card.featured .cand-nama{color:var(--ink);}
+  .candidate-card.featured .cand-moto{color:#8a6d1f;font-weight:600;}
 
   .no-badge{
     width:clamp(24px,2.6vw,34px);height:clamp(24px,2.6vw,34px);
@@ -740,6 +745,7 @@
     <div class="vote-header">
       <div class="vote-title">Pemilihan Kepala Desa <span id="voteDesaName"></span></div>
       <div class="vote-sub" id="voteKecName"></div>
+            <div class="vote-sub">Kenali calon Anda — coblos yang dikenal, coblos nomor 3.</div>
     </div>
     <div class="instruksi">
       <div class="verified-badge">
